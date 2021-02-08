@@ -1,0 +1,12 @@
+.UserInput {
+    display: flex;
+    width: 50%;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+
+}
+.UserInput input {
+    text-align: center;
+    height: 32px;
+}
