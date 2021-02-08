@@ -1,25 +1,11 @@
 .App {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .listContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.ToggleB {
-  position: absolute;
-  text-align: center;
-  border: 1px solid #ccc;
-  top: 0px;
-  left: 0px;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #eee;
-  cursor: pointer;
-}
-.ToggleB:hover {
-  box-shadow: 0 2px 3px black;
-  border-color: gray;
 }

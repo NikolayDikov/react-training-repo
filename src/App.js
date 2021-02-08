@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import './App.css';
 
-import { UserCard } from './views'
+import { UserCard, AddCard } from './views'
+import { Button } from './components'
 
 
 class App extends Component {
 
   state = {
     personalCards: [
-      { id: "1", name: "Nikolay", age: 33},
-      { id: "2", name: "Lora", age: 35},
-      { id: "3", name: "Alek", age: 3},
+      { id: 1, name: "Nikolay", age: 33},
+      { id: 2, name: "Lora", age: 35},
+      { id: 3, name: "Alek", age: 3},
     ],
     showCard: true
   };
@@ -39,6 +40,18 @@ class App extends Component {
       showCard: !this.state.showCard
     });
   };
+  addPersonalCard = (resName, resAge) => {
+    const personalCards = [...this.state.personalCards];
+    let newCard = {
+      id: personalCards.length+1,
+      name: resName,
+      age: parseInt(resAge)
+    };
+    personalCards.push(newCard);
+
+    this.setState({personalCards: personalCards});
+
+  }
 ///////////// METHOTS
 
   render() {
@@ -63,7 +76,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="ToggleB" onClick={this.toggleCrads}>Toggle Cards</div>
+        <Button bPos="abs" bEvent={this.toggleCrads} bText="Toggle Cards" />
+        <AddCard 
+          pName="Add Person Name" 
+          pAge="Add Person Age"
+          addPersonalCard={this.addPersonalCard}
+          />
         {persons}
       </div>
     );

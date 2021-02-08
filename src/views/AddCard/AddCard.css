@@ -1,0 +1,10 @@
+.AddCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 60%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #eee;
+}
