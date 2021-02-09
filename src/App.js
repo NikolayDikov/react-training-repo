@@ -16,7 +16,7 @@ class App extends Component {
     showCard: true
   };
 
-///////////// METHOTS
+///////////// METHODS
   setName = (event, personIndex) => {
     const personalCards = [...this.state.personalCards];
 
@@ -52,7 +52,7 @@ class App extends Component {
     this.setState({personalCards: personalCards});
 
   }
-///////////// METHOTS
+///////////// METHODS
 
   render() {
 
