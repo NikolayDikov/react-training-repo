@@ -6,7 +6,7 @@ const UserCard = ( props ) => {
     return(
         <div className='UserCard'>
             <UserOutput name={props.name} age={props.age}/>
-            <UserInput name={props.name} changed={props.changed}/>
+            <UserInput name={props.name} onChange={props.onChange}/>
             <div className="DeleteB" onClick={props.deleteMe}>Delete</div>
         </div>
     )

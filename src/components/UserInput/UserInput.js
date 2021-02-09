@@ -5,7 +5,7 @@ import './UserInput.css'
 const UserInput = (props) => {
     return (
         <div className='UserInput'>
-            <input type='text' value={props.name} onChange={props.changed} placeholder={props.placeholderText}/>
+            <input type='text' value={props.name} onChange={props.onChange} placeholder={props.placeholderText}/>
         </div>
     )
 }

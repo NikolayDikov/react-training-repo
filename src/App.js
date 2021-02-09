@@ -45,7 +45,7 @@ class App extends Component {
     let newCard = {
       id: personalCards.length+1,
       name: resName,
-      age: parseInt(resAge)
+      age: parseInt(resAge, 10) // || new Number(variable)
     };
     personalCards.push(newCard);
 
@@ -56,27 +56,23 @@ class App extends Component {
 
   render() {
 
-    let persons = null;
-
-    if (this.state.showCard) {
-      persons = (
-        <div className="listContainer">
+    const persons = this.state.showCard && (
+      <div className="listContainer">
           {this.state.personalCards.map((person, index) => {
             return <UserCard 
               name={person.name}
               age={person.age}
               key={person.id}
-              changed={(event) => {this.setName(event, person.id)}}
+              onChange={(event) => {this.setName(event, person.id)}}
               deleteMe={() => {this.deleteCard(index)}}
             />
           })}
         </div>
-      );
-    }
+    );
 
     return (
       <div className="App">
-        <Button bPos="abs" bEvent={this.toggleCrads} bText="Toggle Cards" />
+        <Button buttonPosisition="abs" onClick={this.toggleCrads} bText="Toggle Cards" />
         <AddCard 
           pName="Add Person Name" 
           pAge="Add Person Age"
